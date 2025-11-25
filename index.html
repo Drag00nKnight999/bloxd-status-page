@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloxd.io Status Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <h1>Bloxd.io Status</h1>
+                <p class="tagline">Real-time service status and incident reports</p>
+            </div>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">🌙</button>
+        </header>
+
+        <main class="main-content">
+            <!-- Overall Status Section -->
+            <section class="status-section">
+                <div class="status-card overall-status">
+                    <h2>Overall Status</h2>
+                    <div class="status-display">
+                        <div class="status-indicator operational"></div>
+                        <span class="status-text" id="overallStatus">All Systems Operational</span>
+                    </div>
+                    <p class="uptime-stats">Uptime (Last 90 days): <span id="uptimePercent">99.9%</span></p>
+                </div>
+            </section>
+
+            <!-- Subscription Section -->
+            <section class="subscription-section">
+                <h2>Get Notifications</h2>
+                <div class="subscription-box">
+                    <p>Subscribe to receive updates about service incidents</p>
+                    <form class="subscription-form" id="subscriptionForm">
+                        <input type="email" placeholder="Enter your email" required id="emailInput">
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                    <p class="subscription-note" id="subscriptionNote"></p>
+                </div>
+            </section>
+
+            <!-- Service Status Section -->
+            <section class="status-section">
+                <h2>Services</h2>
+                <div class="services-grid" id="servicesContainer">
+                    <!-- Services will be populated by JavaScript -->
+                </div>
+            </section>
+
+            <!-- Incidents Section -->
+            <section class="incidents-section">
+                <h2>Incidents</h2>
+                <div class="incidents-container">
+                    <div class="incidents-list" id="incidentsList">
+                        <div class="no-incidents">
+                            <p>No recent incidents</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Incident History Section -->
+            <section class="history-section">
+                <h2>Incident History</h2>
+                <div class="history-filters">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="resolved">Resolved</button>
+                    <button class="filter-btn" data-filter="maintenance">Maintenance</button>
+                </div>
+                <div class="history-list" id="historyList">
+                    <!-- History will be populated by JavaScript -->
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>We are neither endorsed or supported by Bloxd LTD.</p>
+            <p><a href="https://bloxd.io" target="_blank">Visit Bloxd.io</a></p>
+        </footer>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
