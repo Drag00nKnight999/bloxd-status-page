@@ -1,0 +1,613 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #4f46e5;
+    --success-color: #10b981;
+    --warning-color: #f59e0b;
+    --danger-color: #ef4444;
+    --maintenance-color: #8b5cf6;
+    
+    --bg-light: #ffffff;
+    --bg-light-secondary: #f9fafb;
+    --text-light: #111827;
+    --border-light: #e5e7eb;
+    
+    --bg-dark: #1f2937;
+    --bg-dark-secondary: #111827;
+    --text-dark: #f3f4f6;
+    --border-dark: #374151;
+    
+    --transition: 0.3s ease;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-light);
+    transition: background-color var(--transition), color var(--transition);
+}
+
+body.dark-mode {
+    background-color: var(--bg-dark);
+    color: var(--text-dark);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0;
+    border-bottom: 2px solid var(--border-light);
+    margin-bottom: 40px;
+    transition: border-color var(--transition);
+}
+
+body.dark-mode .header {
+    border-color: var(--border-dark);
+}
+
+. header-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.tagline {
+    font-size: 1.1rem;
+    color: #6b7280;
+}
+
+body.dark-mode .tagline {
+    color: #9ca3af;
+}
+
+. theme-toggle {
+    background: none;
+    border: 2px solid var(--border-light);
+    padding: 10px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: transform var(--transition);
+}
+
+body.dark-mode .theme-toggle {
+    border-color: var(--border-dark);
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+}
+
+/* Main Content */
+.main-content {
+    margin-bottom: 40px;
+}
+
+/* Status Sections */
+.status-section {
+    margin-bottom: 40px;
+}
+
+.status-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: var(--text-light);
+}
+
+body.dark-mode .status-section h2 {
+    color: var(--text-dark);
+}
+
+/* Overall Status Card */
+.overall-status {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #7c3aed 100%);
+    color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.status-display {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.status-indicator {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 15px;
+    animation: pulse 2s infinite;
+}
+
+. status-indicator.operational {
+    background-color: var(--success-color);
+}
+
+.status-indicator.degraded {
+    background-color: var(--warning-color);
+}
+
+.status-indicator.partial {
+    background-color: var(--warning-color);
+}
+
+.status-indicator.major {
+    background-color: var(--danger-color);
+}
+
+.status-indicator.maintenance {
+    background-color: var(--maintenance-color);
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+. uptime-stats {
+    font-size: 0.95rem;
+    opacity: 0.9;
+}
+
+/* Services Grid */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.service-card {
+    background-color: var(--bg-light-secondary);
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    padding: 20px;
+    transition: all var(--transition);
+    cursor: pointer;
+}
+
+body.dark-mode .service-card {
+    background-color: var(--bg-dark-secondary);
+    border-color: var(--border-dark);
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.service-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.service-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.service-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.status-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+. status-operational { color: var(--success-color); }
+.status-degraded { color: var(--warning-color); }
+.status-partial { color: var(--warning-color); }
+.status-major { color: var(--danger-color); }
+.status-maintenance { color: var(--maintenance-color); }
+
+.service-description {
+    font-size: 0.9rem;
+    color: #6b7280;
+    margin-bottom: 10px;
+}
+
+body.dark-mode .service-description {
+    color: #9ca3af;
+}
+
+.service-uptime {
+    font-size: 0.85rem;
+    color: #9ca3af;
+}
+
+body.dark-mode .service-uptime {
+    color: #6b7280;
+}
+
+/* Subscription Section */
+.subscription-section {
+    background-color: var(--bg-light-secondary);
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    padding: 30px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+body.dark-mode .subscription-section {
+    background-color: var(--bg-dark-secondary);
+    border-color: var(--border-dark);
+}
+
+.subscription-section h2 {
+    margin-bottom: 15px;
+}
+
+.subscription-box p {
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+.subscription-form {
+    display: flex;
+    gap: 10px;
+    max-width: 500px;
+    margin: 0 auto 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.subscription-form input {
+    flex: 1;
+    min-width: 200px;
+    padding: 12px 15px;
+    border: 1px solid var(--border-light);
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: var(--bg-light);
+    color: var(--text-light);
+    transition: border-color var(--transition);
+}
+
+body.dark-mode .subscription-form input {
+    background-color: var(--bg-dark);
+    color: var(--text-dark);
+    border-color: var(--border-dark);
+}
+
+.subscription-form input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.subscription-note {
+    font-size: 0.85rem;
+    color: #6b7280;
+}
+
+body.dark-mode .subscription-note {
+    color: #9ca3af;
+}
+
+/* Buttons */
+.btn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #4338ca;
+    transform: translateY(-2px);
+}
+
+.filter-btn {
+    padding: 8px 16px;
+    background-color: var(--bg-light-secondary);
+    border: 1px solid var(--border-light);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all var(--transition);
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+body.dark-mode .filter-btn {
+    background-color: var(--bg-dark-secondary);
+    border-color: var(--border-dark);
+}
+
+.filter-btn.active {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+/* Incidents Section */
+.incidents-section {
+    margin-bottom: 40px;
+}
+
+.incidents-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.incidents-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.incident-card {
+    background-color: var(--bg-light-secondary);
+    border-left: 4px solid var(--danger-color);
+    border-radius: 5px;
+    padding: 20px;
+    transition: all var(--transition);
+}
+
+body.dark-mode . incident-card {
+    background-color: var(--bg-dark-secondary);
+}
+
+.incident-card. resolved {
+    border-left-color: var(--success-color);
+}
+
+.incident-card.maintenance {
+    border-left-color: var(--maintenance-color);
+}
+
+.incident-card:hover {
+    transform: translateX(5px);
+}
+
+.incident-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-bottom: 10px;
+}
+
+.incident-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    flex: 1;
+}
+
+.incident-badge {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.badge-investigating {
+    background-color: #fef3c7;
+    color: #92400e;
+}
+
+.badge-identified {
+    background-color: #dbeafe;
+    color: #0c2d6b;
+}
+
+.badge-monitoring {
+    background-color: #dcfce7;
+    color: #166534;
+}
+
+.badge-resolved {
+    background-color: #dcfce7;
+    color: #166534;
+}
+
+.badge-maintenance {
+    background-color: #ede9fe;
+    color: #5b21b6;
+}
+
+body.dark-mode .badge-investigating {
+    background-color: #78350f;
+    color: #fef3c7;
+}
+
+body.dark-mode .badge-identified {
+    background-color: #082f4b;
+    color: #dbeafe;
+}
+
+body. dark-mode .badge-monitoring,
+body.dark-mode .badge-resolved {
+    background-color: #064e3b;
+    color: #dcfce7;
+}
+
+body.dark-mode .badge-maintenance {
+    background-color: #3f0f5c;
+    color: #ede9fe;
+}
+
+.incident-time {
+    font-size: 0.9rem;
+    color: #6b7280;
+    margin-bottom: 10px;
+}
+
+body.dark-mode .incident-time {
+    color: #9ca3af;
+}
+
+. incident-description {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.incident-affected {
+    font-size: 0.85rem;
+    color: #6b7280;
+}
+
+body.dark-mode .incident-affected {
+    color: #9ca3af;
+}
+
+.no-incidents {
+    text-align: center;
+    padding: 40px 20px;
+    color: #6b7280;
+}
+
+body.dark-mode .no-incidents {
+    color: #9ca3af;
+}
+
+/* History Section */
+.history-section {
+    margin-bottom: 40px;
+}
+
+.history-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.history-filters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.history-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.history-item {
+    background-color: var(--bg-light-secondary);
+    border-left: 4px solid var(--primary-color);
+    border-radius: 5px;
+    padding: 20px;
+    transition: all var(--transition);
+}
+
+body.dark-mode .history-item {
+    background-color: var(--bg-dark-secondary);
+}
+
+.history-item.resolved {
+    border-left-color: var(--success-color);
+}
+
+.history-item. maintenance {
+    border-left-color: var(--maintenance-color);
+}
+
+.history-date {
+    font-size: 0.85rem;
+    color: #9ca3af;
+    margin-bottom: 5px;
+}
+
+.history-title {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.history-duration {
+    font-size: 0.9rem;
+    color: #6b7280;
+}
+
+body.dark-mode .history-duration {
+    color: #9ca3af;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 30px 0;
+    border-top: 1px solid var(--border-light);
+    color: #6b7280;
+    font-size: 0.9rem;
+}
+
+body.dark-mode .footer {
+    border-color: var(--border-dark);
+    color: #9ca3af;
+}
+
+.footer a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color var(--transition);
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .header-content h1 {
+        font-size: 1.8rem;
+    }
+
+    . subscription-form {
+        flex-direction: column;
+    }
+
+    .subscription-form input,
+    .btn {
+        width: 100%;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+}
