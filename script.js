@@ -62,7 +62,6 @@ function renderServices() {
                 </div>
             </div>
             <p class="service-description">${service.description}</p>
-            <p class="service-uptime">Uptime (30d): ${service.uptime}%</p>
         `;
         
         servicesContainer.appendChild(serviceCard);
