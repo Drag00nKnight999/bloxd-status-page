@@ -39,7 +39,7 @@ const incidents = [
      description: 'A hacker password guessed the admin panel and hacked Bloxd.',
      status: 'Resolved',
      type: 'Outage',
-     affectedServices: ['All services'],
+     affectedServices: ['Game Servers','Website','API','Authentication','Database','CDN'],
      startTime: '2024-2-12T10:00:00Z',
      endTime: '2024-2-15T11:00:00Z' 
  }
