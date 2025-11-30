@@ -12,7 +12,7 @@ const services = [
     },
     {
         name: 'API',
-        description: 'REST API and backend services',
+        description: 'Bloxd Api',
         status: 'Operational',
     },
     {
