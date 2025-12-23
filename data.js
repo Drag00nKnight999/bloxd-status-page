@@ -8,7 +8,7 @@ const services = [
     {
         name: 'Website',
         description: 'Main website and landing page',
-        status: 'Operational',
+        status: 'Degraded Performance',
     },
     {
         name: 'API',
@@ -34,7 +34,15 @@ const services = [
 
 // Incidents data
 const incidents = [
- 
+ {
+     title: 'Exiting Game Crash',
+     description: 'Upon exiting the game, the website will crash. (only for some people)',
+     status: 'Identified',
+     type: 'Outage',
+     affectedServices: ['Website','Game Servers'],
+     startTime: '2025-12-23T20:41:13Z',
+     endTime: 'null'  // omit or set to null for ongoing incidents
+ }
 ];
 /*
 Documentation for adding new services or incidents:
