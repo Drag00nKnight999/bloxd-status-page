@@ -3,7 +3,7 @@ const services = [
     {
         name: 'Game Servers',
         description: 'Core game servers and multiplayer connectivity',
-        status: 'Operational',
+        status: 'Degraded Performance',
     },
     {
         name: 'Website',
