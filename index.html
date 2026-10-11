@@ -3,30 +3,59 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Bloxd.io Status</title>
+  <meta name="robots" content="noindex">
+  <title>410 — Gone</title>
   <style>
-    html,
-    body {
-      width: 100%;
-      height: 100%;
+    * { box-sizing: border-box; }
+
+    html, body {
+      min-height: 100%;
       margin: 0;
-      overflow: hidden;
     }
 
-    iframe {
-      position: fixed;
-      inset: 0;
-      width: 100vw;
-      height: 100vh;
-      border: 0;
-      display: block;
+    body {
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      background: #f4f6f8;
+      color: #18212b;
+      font: 16px/1.6 system-ui, sans-serif;
+      text-align: center;
+    }
+
+    main {
+      max-width: 560px;
+    }
+
+    .code {
+      margin: 0;
+      color: #526170;
+      font-size: clamp(5rem, 18vw, 9rem);
+      font-weight: 800;
+      letter-spacing: -0.08em;
+      line-height: 1;
+    }
+
+    h1 {
+      margin: 16px 0 8px;
+      font-size: clamp(1.5rem, 5vw, 2rem);
+    }
+
+    p { margin: 0; }
+
+    a {
+      display: inline-block;
+      margin-top: 24px;
+      color: #075fc7;
     }
   </style>
 </head>
 <body>
-  <iframe
-    src="https://bloxdio.hyperping.app"
-    title="Bloxd.io Status">
-  </iframe>
+  <main>
+    <p class="code" aria-hidden="true">410</p>
+    <h1>This page is gone</h1>
+    <p>The page you’re looking for has been permanently removed.</p>
+    <a href="/">Return to the home page</a>
+  </main>
 </body>
 </html>
